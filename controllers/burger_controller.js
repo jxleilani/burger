@@ -1,6 +1,15 @@
 const express = require('express');
-const Burger = require('../models/burger.js');
+const router = express.Router();
 
-//create the router
+const burger = require('../models/burger.js');
+
+router.get("/", function(req, res){
+    burger.selectAll(function(data){
+        var burgerObj = {
+            burgers: data
+        };
+        res.render("index", burgerObj);
+    });
+});
 
 module.exports = router;
