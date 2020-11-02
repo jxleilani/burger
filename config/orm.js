@@ -12,14 +12,14 @@ var orm = {
     },
     insertOne: function(table, columns, values, callback){
         var queryString = "INSERT INTO ?? (??) VALUES (?);"
-        connection.query(queryString, [table, columns, values], function(err,result){
+        connection.query(queryString, [table, columns, values], function(err, result){
             if (err) throw err;
             callback(result);
         });
     },
     updateOne: function(table, columns, values, callback){
         var queryString = "UPDATE ?? SET ?? WHERE ?";
-        connection.query(queryString, [table, columns, values], function(err,result){
+        connection.query(queryString, [table, columns, values], function(err, result){
             if (err) throw err;
             callback(result);
         });
