@@ -8,13 +8,13 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="card">
-                        <div class="card-header alert-warning">
+                        <div class="card-header alert-warning text-center">
                             Available Burgers
                         </div>
                         <ol>
                         {{#each burgers}}
                             {{#unless devoured}}
-                                <li>{{burger_name}} <button type="submit" class="btn btn-warning btn-sm devourBtn" data-id="{{id}}">Devour!</button></li>
+                                <li>{{burger_name}} <button type="submit" class="btn btn-warning btn-sm devourBtn" data-id="{{id}}">Devour It!</button></li>
                             {{/unless}}
                         {{/each}}
                         </ol>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="card">
-                        <div class="card-header alert-warning">
+                        <div class="card-header alert-warning text-center">
                             Devoured Burgers (yum!)
                         </div>
                         <ol>
@@ -50,7 +50,7 @@
                         <div class="form-group">
                             <input type="text" id="burger" name="name">
                         </div>
-                        <button type="submit" id="submitBtn">Submit</button>
+                        <button type="submit" id="submitBtn" class="btn btn-small border-warning text-warning alert-warning">Build It!</button>
                     </form>
                 </div>
             </div>
