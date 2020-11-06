@@ -8,35 +8,40 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="card">
-                        <ul>
+                        <div class="card-header alert-warning">
+                            Available Burgers
+                        </div>
+                        <ol>
                         {{#each burgers}}
                             {{#unless devoured}}
-                                <li>{{this.burger_name}}</li>
+                                <li>{{burger_name}} <button type="submit" class="btn btn-warning btn-sm devourBtn" data-id="{{id}}">Devour!</button></li>
                             {{/unless}}
-                        
                         {{/each}}
-                        </ul>
+                        </ol>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="card">
-                    <ul>
+                        <div class="card-header alert-warning">
+                            Devoured Burgers (yum!)
+                        </div>
+                        <ol>
                         {{#each burgers}}
                             {{#if devoured}}
-                                <li>{{this.burger_name}}</li>
+                                <li>{{burger_name}}</li>
                             {{/if}}
                         {{/each}}
-                        </ul>
+                        </ol>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row form-row">
         <div class="col">
             <div class="row">
                 <div class="col-6 m-auto text-center">
-                    <h2>Create a Burger!</h2>
+                    <h3>Build Your Own Burger!</h3>
                 </div>
             </div>
             <div class="row">

@@ -12,11 +12,21 @@ router.get("/", function(req, res){
     });
 });
 
-router.post("/api/burgers", function(req, res) {
+router.post("/api/burgers", function(req, res){
     burger.insertOne(["burger_name"], [req.body.burger_name], function(result) {
-      console.log("hello");
-      res.json({ id: result.insertId });
+      console.log(result);
+      res.status(200).end();
     });
+});
+
+router.put("/api/burgers/:id", function(req,res){
+  burger.updateOne({devoured: 1},{id: req.params.id}, function(result){
+    if (result.affectedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
   });
+});
 
 module.exports = router;

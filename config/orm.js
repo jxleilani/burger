@@ -17,9 +17,9 @@ var orm = {
             callback(result);
         });
     },
-    updateOne: function(table, columns, values, callback){
-        var queryString = "UPDATE ?? SET ?? WHERE ?";
-        connection.query(queryString, [table, columns, values], function(err, result){
+    updateOne: function(table, columns, value, callback){
+        var queryString = "UPDATE ?? SET ? WHERE ?";
+        connection.query(queryString, [table, columns, value], function(err, result){
             if (err) throw err;
             callback(result);
         });
