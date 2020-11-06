@@ -1,3 +1,11 @@
+.jumbotron {
+    background-image: url(/assets/img/background.jpg);
+}
+.jumbotron h1 {
+    width: 600px;
+    margin: auto;
+    background: #fff;
+}
 .form-row {
     margin-top: 20px;
 }
